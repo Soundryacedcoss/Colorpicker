@@ -2,8 +2,11 @@ import { useState } from "react";
 import "./App.css";
 function App() {
   const [input, setInput] = useState("");
-  const [output, setOutput] = useState("");
+  const [output, setOutput] = useState();
   const[color1,setColor]=useState("");
+  const[inputDiv,setInputDiv]=useState()
+  const[display,setDisplay]=useState({display:"none"})
+  console.log(input);
   const InputRgbHandler = (e) => {
     setInput(e.target.value);
   };
@@ -12,6 +15,9 @@ function App() {
  console.log(color1);
  }
   const ButtonHandler = () => {
+    console.log('d');
+    setInputDiv("")
+    
     let temp = "";
     temp = input.split(",");
     console.log(temp[0]);
@@ -24,19 +30,19 @@ function App() {
     let outpt = "";
     for (let i = 0; i < temp.length; i++) {
       let ot1 = Math.floor(temp[i] / 16);
-
       console.log("ot1", ot1);
-      if (input==="") {
+      if (input===""){
         alert("Please Enter value")
-        setOutput("");
+        setOutput()
       }
       else if(temp[i]===0 || temp[i]>=256){
         alert("input range should be 0-255")
-        setOutput("");
+        setOutput();
       }
       else if (ot1 === 0 || ot1 <= 9) {
         console.log("ot1", ot1);
         outpt += ot1;
+        setOutput();
       } else if (ot1 === 10) {
         outpt += "" + val1;
       } else if (ot1 === 11) {
@@ -53,10 +59,8 @@ function App() {
       }
       // ot2
       let ot2 = temp[i] % 16;
-      if (input==="") {
-        alert("Please Enter value")
-      }
-      else if (ot2 === 0 || ot2 <= 9) {
+      
+      if (ot2 === 0 || ot2 <= 9) {
         outpt += ot2;
       } else if (ot2 === 10) {
         outpt += "" + val1;
@@ -73,20 +77,20 @@ function App() {
       }
     }
     setOutput("#" + outpt);
+    setDisplay({display:"block"})
   };
   return (
     <div className="App">
       <div className="ColorDiv" style={{ backgroundColor: output }}></div>
       <div className="InputDiv">
-        <input type="text" onChange={InputRgbHandler} placeholder="RGB" />
+        <input type="text" value={inputDiv} onChange={InputRgbHandler} placeholder="RGB" />
       </div>
       <button className="button" onClick={ButtonHandler}>
         Show
       </button>
-      <p>Hex value is:{output}</p>
+      <p >Hex value is:{output}</p>
       <p>Hex value of div is:{color1}</p>
       <div className="color">
-        
         <div className="PickColorDiv background1" value="#faa0ff" onClick={divColor} >
       
         </div>
