@@ -1,25 +1,24 @@
-.App{
+.App {
   padding: 1%;
 }
-.ColorDiv{
-  width: 10%;
-  height: 70%;
+.ColorDiv {
+  width: 40px;
+  height: 40px;
   padding: 10%;
- margin-left: 30%;
- /* border: solid blueviolet 2px; */
- border-radius: 70%;
- border: solid black 2px;
- border-radius: 2% ;
+  margin-left: 30%;
+  border-radius: 12%;
+  border: solid black 2px;
 }
-input[type=text] {
-  width: 20%;
+input[type="text"] {
+  width: 25%;
   padding: 12px 20px;
-  margin-left: 35%;
+  margin-left: 30%;
   margin-top: 4%;
   box-sizing: border-box;
+  font-size: 20px;
 }
 .button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -28,39 +27,63 @@ input[type=text] {
   display: inline-block;
   font-size: 16px;
   margin-top: 4%;
-  margin-left: 40%;
+  margin-left: 37%;
   cursor: pointer;
+  border-radius: 12px;
 }
-p{
+p {
   margin: 5%;
   padding: 2%;
-  border:solid #4CAF50 2px;
+  border: solid #4caf50 2px;
   margin-left: 10%;
   text-align: center;
   font-size: 20px;
+  border-radius: 12px;
+  width: 60%;
 }
-.PickColorDiv{
+.color {
+  display: flex;
+  flex-wrap: wrap;
+}
+.PickColorDiv {
   margin-left: 12%;
   padding: 3%;
-  border-radius: 30%;
-
-  /* background-color: #4CAF50; */
+  border-radius: 12%;
+   width: 10%;
+   height: 50px;
+   width: 50px;
+   margin-top: 3%;
 }
-.background1{
-background-color: #FAA0FF;
+.background1 {
+  background-color: #faa0ff;
 }
-.background2{
+.background2 {
   background-color: #ff00da;
 }
-.background3{
+.background3 {
   background-color: #ffac00;
 }
-.background4{
+.background4 {
   background-color: #aa0000;
 }
-.background5{
+.background5 {
   background-color: #ff0000;
 }
-.color{
+
+.background6 {
+  background-color: #005a9c;
+}
+
+.Container {
   display: flex;
+}
+.Row1-col1 {
+  width: 50%;
+  margin-top: 2%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.Row1-col2 {
+  width: 50%;
+  margin-top: 3%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
