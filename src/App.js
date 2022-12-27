@@ -4,23 +4,17 @@ function App() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState();
   const [color1, setColor] = useState("");
-  const [inputDiv, setInputDiv] = useState();
-  const [display, setDisplay] = useState({ display: "none" });
-  console.log(input);
   const InputRgbHandler = (e) => {
     setInput(e.target.value);
   };
   const divColor = (e) => {
     setColor(e.target.getAttribute("value"));
-    console.log(color1);
   };
   const ButtonHandler = () => {
-    console.log("d");
-    setInputDiv("");
-
+    setInput("");
     let temp = "";
     temp = input.split(",");
-    console.log(temp[0]);
+
     let val1 = "a";
     let val2 = "b";
     let val3 = "c";
@@ -30,7 +24,7 @@ function App() {
     let outpt = "";
     for (let i = 0; i < temp.length; i++) {
       let ot1 = Math.floor(temp[i] / 16);
-      console.log("ot1", ot1);
+
       if (input === "") {
         alert("Please Enter value");
         setOutput();
@@ -38,13 +32,11 @@ function App() {
         alert("input range should be 0-255");
         setOutput();
       } else if (ot1 === 0 || ot1 <= 9) {
-        console.log("ot1", ot1);
         outpt += ot1;
         setOutput();
       } else if (ot1 === 10) {
         outpt += "" + val1;
       } else if (ot1 === 11) {
-        console.log(val2);
         outpt += "" + val2;
       } else if (ot1 === 12) {
         outpt += "" + val3;
@@ -75,7 +67,6 @@ function App() {
       }
     }
     setOutput("#" + outpt);
-    setDisplay({ display: "block" });
   };
   return (
     <div className="App">
@@ -86,7 +77,7 @@ function App() {
           <div className="InputDiv">
             <input
               type="text"
-              value={inputDiv}
+              value={input}
               onChange={InputRgbHandler}
               placeholder="RGB"
             />
